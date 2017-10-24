@@ -1,4 +1,4 @@
-# DutchRadio skill
+# Dutch Radio skill
 
 This skill streams radio from urls. It uses vlc so you have to install that with:
 sudo apt-get install vlc
