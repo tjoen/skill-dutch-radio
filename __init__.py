@@ -30,7 +30,6 @@ class DutchRadio(MycroftSkill):
 
         for c in self.dr.channels.keys():
             self.register_vocabulary(c, 'ChannelKeyword')
-            logger.info('playword: ', c)
         intent = IntentBuilder('PlayChannelIntent' + self.name)\
             .require('PlayKeyword')\
             .require('ChannelKeyword')\
@@ -51,7 +50,6 @@ class DutchRadio(MycroftSkill):
         logger.info('Stopping currently playing media if any')
         #if self.process:
         #    self.stop()
-        #self.emitter.emit(Message('mycroft.media.stop', {'origin': self.name}))
 
     def play(self):
         self.before_play()
@@ -75,7 +73,6 @@ class DutchRadio(MycroftSkill):
 
     def handle_play_channel(self, message):
         logger.debug( message.data )
-        #c = message.data('ChannelKeyword')
         c = message.data.get('ChannelKeyword')
         self.prepare(c)
         self.play()

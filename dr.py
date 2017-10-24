@@ -1,5 +1,4 @@
-﻿#import requests
-import csv
+﻿import csv
 
 from collections import OrderedDict
 
@@ -13,12 +12,9 @@ class Channel():
 class DutchRadio():
     def __init__(self):
         indx = 0
-        r = open('/opt/mycroft/skills/DutchRadio/radio.csv', 'r')
+        r = open('/opt/mycroft/skills/skill-dutchradio/radio.csv', 'r')
         reader = csv.reader(r, delimiter=',')
         channellist = list(reader)
-        #Found ' + str(len(channellist)) + 'channels.
-        #self.speak_dialog(' Starting ' + channellist[0][0])
-        #Media = Instance.media_new(channellist[0][1].strip())
         self.channels = {}
         if r:
             for c in channellist:
