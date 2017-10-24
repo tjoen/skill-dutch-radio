@@ -20,4 +20,3 @@ Known issues:
 
 TODO:
  - Add volume adjustment when using wakeword.
-
