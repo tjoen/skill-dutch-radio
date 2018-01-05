@@ -56,7 +56,7 @@ class DutchRadio(MycroftSkill):
         self.speak_dialog('listening_to', {'channel': self.channel})
         time.sleep(2)
         stream_url = self.dr.channels[self.channel].stream_url
-        self.process = subprocess.Popen(['cvlc', stream_url])
+        self.process = subprocess.Popen(['mpg123', stream_url])
 
     def get_available(self, channel_name):
         logger.info(channel_name)
